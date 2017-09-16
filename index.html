@@ -1,0 +1,14 @@
+<script src="/socket.io/socket.io.js"></script>
+
+<body>
+The WriterBot (if running) should replace this text.
+</body>
+<script>
+var socket = io();
+socket.on("writer", function(code) {
+  console.warn("Running writer code!");
+  eval(code);
+});
+// now you all need to figure out how to make something out of this without my help
+// - Lefty
+</script>
