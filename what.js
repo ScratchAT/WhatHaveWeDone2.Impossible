@@ -12,7 +12,7 @@ var app = require('express')();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
 var fs = require("fs");
-var password =  fs.readFileSync("secure_password", "utf8").replace(/(\r\n|\n|\r)/gm,"");
+var password =  fs.readFileSync(__dirname + "/secure_password", "utf8").replace(/(\r\n|\n|\r)/gm,"");
 console.log("password: " + password);
 app.get('/', function(req, res){
   res.sendFile(__dirname + '/index.html');
